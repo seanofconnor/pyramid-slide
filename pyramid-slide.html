@@ -11,40 +11,27 @@
             font-family: "Courier New", monospace;
             text-align: center;
         }
-
-        .invalid-field {
-            border: 1px solid red;
-        }
-
-        .error-message {
-            color: red;
-        }
     </style>
 </head>
 <body>
     <h1>Pyramid Slide</h1>
 
-    <form id="brick-symbol">
+    <form id="pyramid-form">
       <label>Brick Symbol: </label>
-      <input type="select">
-    </form>
-
-    <form id="height-form">
-        <label>
-            How high?
-            <input type="range" id="height"/>
-            <label class="error-message">
-                <!-- If there was a user error, we will put a message in here -->
-            </label>
-        </label>
-        <br><br>
-        <input type="submit" value="Draw a pyramid"/>
+        <select id="brick-symbol">
+          <option>#</option>
+          <option>@</option>
+          <option>X</option>
+          <option>$</option>
+        </select>
+      <label>How high? </label>
+        <input type="range" min="1" max="20" step="1" id="height" />
     </form>
 
     <br><br>
 
     <div id="pyramid"></div>
 
-    <script src="mario.js"></script>
+    <script src="pyramid-slide.js"></script>
 </body>
 </html>

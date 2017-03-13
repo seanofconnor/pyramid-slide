@@ -1,85 +1,28 @@
 
+document.getElementById("height").oninput = function() {slideFunction()};
 
-var heightElem = document.getElementById("height");
-var formElem = document.getElementById("draw-form");
-
-// set a handler function for the form's submission event
-formElem.onsubmit = function(event) {
-
-    // QUIZ
-    // what happens if we don't do this?
+function slideFunction() {
     event.preventDefault();
-
-    // QUIZ
-    // what happens if we don't do this?
-    clearError();
-
-    // figure out the height the user typed
-    heightStr = heightElem.value;
-
-    // if they didn't type anything at all, give a different error message,
-    // something like "Please provide a height"
-    if (heightStr == "") {
-        displayError("Please provide a height.");
-        return;
-      }
+    var heightElem = document.getElementById("height");
+    var brickElem = document.getElementById("brick-symbol");
+    // retrieve selected brick
+    var brick = brickElem.value;
+    console.log(brick);
+    // retrieve height
+    var heightStr = heightElem.value;
     // convert the string to an int
     height = parseInt(heightStr);
-
-    // if the height is not-a-number, yell at them and exit early
-    // negative numbers and zero should also be rejected here
-
-    if (isNaN(height) || height < 1) {
-        displayError("That's not a valid height.");
-        return;
-    }
-
-    // if the height is absurdly tall, yell at them and exit early
-    var tooTall = 100;
-    if (height > tooTall) {
-        displayError("Are you cray? I can't build a pyramid that tall.");
-        return;
-    }
-
-    // draw pyramid with the specified height
-    drawPyramid(height);
+    // draw pyramid with the specified height and brick character
+    drawPyramid(height, brick);
 }
 
-
-/**
- * displayError
- *
- * Displays an error message on the text input, and colors it red
- */
-function displayError(message) {
-    heightElem.className = "invalid-field";
-    document.querySelector(".error-message").innerHTML = message;
-}
-
-
-/*
- * clearError
- *
- * Undisplays the error message and removes the red CSS style
- */
-function clearError(message) {
-    document.querySelector(".error-message").innerHTML = "";
-    heightElem.className = "";
-}
-
-
-
-/**
- * drawPyramid
- *
- * Renders, in the HTML document, a Mario pyramid of the specified height
- */
+// renders, in the HTML document, a pyramid of the specified height
 function drawPyramid(height) {
 
-    // first, clear the old content
+    // clear the old content
     document.getElementById("pyramid").innerHTML = "";
 
-    // for each row....
+    // create rows
     for (var row = 0; row < height; row++) {
 
         // figure out number of bricks and spaces
