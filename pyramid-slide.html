@@ -15,9 +15,10 @@
         }
 
       #pyramid-wrapper {
-        width: 500px;
+        width: 600px;
         margin: auto;
         border: solid 2px #9d6189;
+        border-radius: 3px;
         background-color: #efefef;
         }
 
@@ -28,7 +29,9 @@
 
       #pyramid {
         line-height: 0;
-        font-size: 30px;
+        font-size: 26px;
+        color: #9d6189;
+        padding: 40px;
         }
     </style>
 </head>
@@ -37,7 +40,10 @@
       <h1>Pyramid Slide</h1>
     </div>
     <br>
+    <br>
+
     <div id="pyramid-wrapper">
+
       <form id="pyramid-form">
         <label>Brick Symbol: </label>
           <select id="brick-symbol">
@@ -49,9 +55,9 @@
         <label>How high? </label>
           <input type="range" min="1" max="20" step="1" id="height" />
       </form>
-
-    <div id="pyramid"></div>
+      <div id="pyramid"></div>
     </div>
+
     <script src="pyramid-slide.js"></script>
 </body>
 </html>
