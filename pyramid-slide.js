@@ -17,7 +17,7 @@ function slideFunction() {
 }
 
 // renders, in the HTML document, a pyramid of the specified height
-function drawPyramid(height) {
+function drawPyramid(height, brick) {
 
     // clear the old content
     document.getElementById("pyramid").innerHTML = "";
@@ -36,7 +36,7 @@ function drawPyramid(height) {
             rowStr += spaceChar;
         }
         for (var i = 0; i < numBricks; i++) {
-            rowStr += "#";
+            rowStr += brick;
         }
 
         // make a <p> element for this row, and insert it into the #pyramid container
