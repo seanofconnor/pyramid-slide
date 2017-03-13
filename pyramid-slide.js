@@ -1,5 +1,6 @@
 
 document.getElementById("height").oninput = function() {slideFunction()};
+document.getElementById("brick-symbol").oninput = function() {slideFunction()};
 
 function slideFunction() {
     event.preventDefault();
@@ -7,7 +8,6 @@ function slideFunction() {
     var brickElem = document.getElementById("brick-symbol");
     // retrieve selected brick
     var brick = brickElem.value;
-    console.log(brick);
     // retrieve height
     var heightStr = heightElem.value;
     // convert the string to an int
