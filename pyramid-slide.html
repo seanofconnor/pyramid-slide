@@ -2,36 +2,56 @@
 <html>
 <head>
     <style>
-        #pyramid {
-            line-height: 0;
-            font-size: 30px;
+      body {
+        font-family: "Courier New", monospace;
+        text-align: center;
+        margin: auto;
         }
 
-        body {
-            font-family: "Courier New", monospace;
-            text-align: center;
+      #header {
+        padding: 10px;
+        color: #efefef;
+        background-color: #9d6189;
+        }
+
+      #pyramid-wrapper {
+        width: 500px;
+        margin: auto;
+        border: solid 2px #9d6189;
+        background-color: #efefef;
+        }
+
+      #pyramid-form {
+        background-color: #d0cfcd;
+        padding: 30px;
+        }
+
+      #pyramid {
+        line-height: 0;
+        font-size: 30px;
         }
     </style>
 </head>
 <body>
-    <h1>Pyramid Slide</h1>
-
-    <form id="pyramid-form">
-      <label>Brick Symbol: </label>
-        <select id="brick-symbol">
-          <option>#</option>
-          <option>@</option>
-          <option>X</option>
-          <option>$</option>
-        </select>
-      <label>How high? </label>
-        <input type="range" min="1" max="20" step="1" id="height" />
-    </form>
-
-    <br><br>
+    <div id="header">
+      <h1>Pyramid Slide</h1>
+    </div>
+    <br>
+    <div id="pyramid-wrapper">
+      <form id="pyramid-form">
+        <label>Brick Symbol: </label>
+          <select id="brick-symbol">
+            <option>#</option>
+            <option>@</option>
+            <option>X</option>
+            <option>$</option>
+          </select>
+        <label>How high? </label>
+          <input type="range" min="1" max="20" step="1" id="height" />
+      </form>
 
     <div id="pyramid"></div>
-
+    </div>
     <script src="pyramid-slide.js"></script>
 </body>
 </html>
