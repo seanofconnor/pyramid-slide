@@ -4,12 +4,15 @@ document.getElementById("brick-symbol").oninput = function() {slideFunction()};
 
 function slideFunction() {
     event.preventDefault();
+
     var heightElem = document.getElementById("height");
     var brickElem = document.getElementById("brick-symbol");
     // retrieve selected brick
     var brick = brickElem.value;
     // retrieve height
     var heightStr = heightElem.value;
+    // change slider number
+    document.getElementById("slide-number").innerHTML = heightStr;
     // convert the string to an int
     height = parseInt(heightStr);
     // draw pyramid with the specified height and brick character
